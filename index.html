@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Moje appka which kicks ass</title>
+    <title>Moje appka</title>
+
     <style>
         body {
-            font-family: Calibri;
+            font-family: Arial;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
+            background: white;
+            color: black;
+        }
+
+        .dark {
+            background: #121212;
+            color: white;
         }
 
         button {
@@ -16,37 +24,18 @@
         }
     </style>
 </head>
-<body>
-    <h1 id="nadpis">Branch verze 🎯</
+<body id="body">
 
-    <h2 id="pocet">0</h2>
+    <h1>Dark Mode Appka 🌙</h1>
 
-    <button onclick="pricti()">+1</button>
-    <button onclick="odecti()">-1</button>
-    <button onclick="reset()">Reset</button>
+    <button onclick="toggleDark()">Přepnout Dark Mode</button>
 
     <script>
-        let pocet = 0;
-
-        function pricti() {
-            pocet++;
-            aktualizuj();
-        }
-
-        function odecti() {
-            pocet--;
-            aktualizuj();
-        }
-
-        function reset() {
-            pocet = 0;
-            aktualizuj();
-        }
-
-        function aktualizuj() {
-            document.getElementById("pocet").innerText = pocet;
+        function toggleDark() {
+            let body = document.getElementById("body");
+            body.classList.toggle("dark");
         }
     </script>
+
 </body>
 </html>
-``
