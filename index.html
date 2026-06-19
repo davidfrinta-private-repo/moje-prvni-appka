@@ -1,17 +1,50 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Moje první appka</title>
+    <title>Moje appka</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Ahoj světe 👋</h1>
-    <h1>Moje první appka 🚀</h1>
-    <button onclick="pozdrav()">Klikni na mě</button>
+    <h1 id="nadpis">Počítadlo kliknutí 🚀</h1>
+
+    <h2 id="pocet">0</h2>
+
+    <button onclick="pricti()">+1</button>
+    <button onclick="odecti()">-1</button>
+    <button onclick="reset()">Reset</button>
 
     <script>
-        function pozdrav() {
-            alert("Funguje to 🚀");
+        let pocet = 0;
+
+        function pricti() {
+            pocet++;
+            aktualizuj();
+        }
+
+        function odecti() {
+            pocet--;
+            aktualizuj();
+        }
+
+        function reset() {
+            pocet = 0;
+            aktualizuj();
+        }
+
+        function aktualizuj() {
+            document.getElementById("pocet").innerText = pocet;
         }
     </script>
 </body>
